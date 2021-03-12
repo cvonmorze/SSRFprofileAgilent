@@ -7,3 +7,6 @@ pulses on a Agilent MRI scanner ('profile1d_test.c'). Package also includes flyb
 VNMRJ source code is available via the OpenVNMRJ project on github: https://github.com/OpenVNMRJ
 
 Distributed under the terms of the GNU General Public License. 
+
+The included pulse waveforms were designed using the Spectral-Spatial-RF-Pulse-Design toolbox authored by Peder Larson and Adam Kerr. 
+https://github.com/LarsonLab/Spectral-Spatial-RF-Pulse-Design
