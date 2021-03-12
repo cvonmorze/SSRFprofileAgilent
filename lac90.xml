@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svk_data_acquisition_description>
+   <version>0</version>
+   <encoding>
+      <excitation>
+         <spectralType>selective</spectralType>
+         <spatialType>selective</spatialType>
+         <pulseName>lachuck</pulseName>
+      </excitation>
+   </encoding>
+</svk_data_acquisition_description>
