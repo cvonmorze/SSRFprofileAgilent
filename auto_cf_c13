@@ -1,0 +1,48 @@
+// auto_cf_c13
+//
+// Automatically sets the C13 center frequency to the location of the largest resonance
+// To use, have a slab spectrum sequence and an EPI set up in the study queue 
+// Then select the slab sequence and type the following in the command window:
+// go shell('sleep 1.1') auto_cf_c13 shell('sleep 1.0') acquire
+// This will start the slab sequence, run the macro, and then start the EPI sequence
+//
+// Other tips:
+// The EPI must be above the spectrum in the queue
+// The sleep times can be adjusted, but make sure that the macro does not start before
+// the first sequence is complete
+// Because of the xmnext command, you will not see the 1D spectrum on screen
+// C13offset should be reset to initial value if running the script more than once
+//
+// Tyler Blazey (blazey@wustl.edu), Spring 2021
+
+//Define location to save data
+out_fid = '/home/nmr144/vnmrsys/studies/ref.fid'
+
+// Saves slab spectrum. Overwrites whatever was there previously.
+svf(out_fid, 'force')
+
+// Load in 1D spectrum
+rt(out_fid)
+
+// Run fourier transform on spectrum
+ft
+
+// Set boundaries of display to spectral bandwidth
+zoom(sw)
+
+// Move display cursor to center of spectrum
+centersw
+
+// Set center frequency to current C13 offset
+rl(C13offset)
+
+// Get height and frequency of peak resonance
+peak:$height,$p_freq
+
+// Activate next scan. Needs to be epi experiment
+xmnext
+
+// Set offsets for epi sequence to peak frequency
+C13offset = $p_freq
+resto = $p_freq
+tof = $p_freq
