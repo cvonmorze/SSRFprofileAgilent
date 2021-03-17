@@ -5,7 +5,7 @@
       <excitation>
          <spectralType>selective</spectralType>
          <spatialType>selective</spatialType>
-         <pulseName>lachuck</pulseName>
+         <pulseName>lac90</pulseName>
       </excitation>
    </encoding>
 </svk_data_acquisition_description>
