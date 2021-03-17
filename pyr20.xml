@@ -5,7 +5,7 @@
       <excitation>
          <spectralType>selective</spectralType>
          <spatialType>selective</spatialType>
-         <pulseName>pyrchuck</pulseName>
+         <pulseName>pyr20</pulseName>
       </excitation>
    </encoding>
 </svk_data_acquisition_description>
